@@ -8,7 +8,8 @@ addons:
       secure: 26180934cd66eaa1fd929ea800145213f3a3cf19
 jdk:
   - oraclejdk8
-script: ant build
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 cache:
   directories:
     - '$HOME/.m2/repository'
